@@ -13,8 +13,6 @@ def main():
     )    
     logger.info("Starting bot")
 
-    vk_session = VkSession()
-
     bot_engine = TgBotEngine()
     bot_engine.start()
 
