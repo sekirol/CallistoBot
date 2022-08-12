@@ -9,7 +9,7 @@ class VkSession():
 
     def _connect(self):
         access = get_access_data("vk")
-        session = VkApi(access['login'], access['password'])    
+        session = VkApi(access['login'], access['password'])
     
         session.auth()
         self.api = session.get_api()

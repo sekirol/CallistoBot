@@ -14,7 +14,6 @@ class TgBotEngine:
         
         self.dp = Dispatcher(bot, storage=storage)
 
-
     def start(self):
         executor.start_polling(self.dp, skip_updates=True, on_shutdown=self._shutdown)
 
