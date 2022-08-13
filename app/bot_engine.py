@@ -7,7 +7,7 @@ from .handlers.common import register_handlers_common
 from .handlers.search import register_handlers_search
 from .tools import get_access_data
 
-FSM_STORAGE_PATH = "app_state.json"
+FSM_STORAGE_PATH = "./app/data/app_state.json"
 
 async def shutdown(dp: Dispatcher):
     await dp.storage.close()
