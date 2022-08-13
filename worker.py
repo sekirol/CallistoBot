@@ -1,8 +1,7 @@
 
 import logging
 
-from bot_engine import TgBotEngine
-from vk_session import VkSession
+from app.bot_engine import TgBotEngine
 
 logger = logging.getLogger(__name__)
 

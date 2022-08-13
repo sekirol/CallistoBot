@@ -3,9 +3,9 @@ from aiogram import Bot, Dispatcher
 from aiogram.utils import executor
 from aiogram.contrib.fsm_storage.files import JSONStorage
 
-from handlers.common import register_handlers_common
-from handlers.search import register_handlers_search
-from tools import get_access_data
+from .handlers.common import register_handlers_common
+from .handlers.search import register_handlers_search
+from .tools import get_access_data
 
 FSM_STORAGE_PATH = "app_state.json"
 
