@@ -1,7 +1,7 @@
 
 from vk_api import VkApi
 
-from tools import get_access_data
+from .tools import get_access_data
 
 VK_CONFIG_PATH = "./app/data/vk_config.v2.json"
 
