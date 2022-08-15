@@ -3,7 +3,7 @@ from aiogram import Dispatcher, types
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters import Text
 
-from .state_machine import AppState
+from ..state_machine import AppState
 
 async def cmd_start(message: types.Message, state: FSMContext):
     await AppState.initial.set()

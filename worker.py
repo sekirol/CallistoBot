@@ -1,7 +1,7 @@
 
 import logging
 
-from app.bot_engine import TgBotEngine
+from app.bot.bot_engine import TgBotEngine
 
 logger = logging.getLogger(__name__)
 

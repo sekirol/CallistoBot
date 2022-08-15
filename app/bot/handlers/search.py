@@ -3,7 +3,7 @@ from aiogram import Dispatcher, types
 from aiogram.dispatcher import FSMContext
 from datetime import datetime
 
-from .state_machine import AppState, StateContext
+from ..state_machine import AppState, StateContext
 
 async def cmd_search(message: types.Message, state: FSMContext):
     await state.set_state(AppState.search)
