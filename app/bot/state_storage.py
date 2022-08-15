@@ -12,6 +12,12 @@ class StateStorage(JSONStorage):
             return json.load(f)
 
     def write(self, path: pathlib.Path):
+        for chat_id, chat_context in self.data.items():
+            for user_id, user_context in chat_context.items():
+                schema = StateContextSchema()
+                object_string = schema.dumps(user_context['data'])
+                self.data[chat_id][user_id]['data'] = object_string
+                
         with path.open('w') as f:
             return json.dump(self.data, f, indent=4)
 
