@@ -1,5 +1,3 @@
-access.json
-vk_config*
-app_state.json
+app/data/
 
 __pycache__/

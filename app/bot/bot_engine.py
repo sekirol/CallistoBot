@@ -1,13 +1,13 @@
 
 from aiogram import Bot, Dispatcher
 from aiogram.utils import executor
+from aiogram.contrib.fsm_storage.files import PickleStorage
 
 from .handlers.common import register_handlers_common
 from .handlers.search import register_handlers_search
-from .state_storage import StateStorage
 from ..tools import get_access_data
 
-FSM_STORAGE_PATH = "./app/data/app_state.json"
+FSM_STORAGE_PATH = "./app/data/app_state.bin"
 
 async def shutdown(dp: Dispatcher):
     await dp.storage.close()
@@ -15,7 +15,7 @@ async def shutdown(dp: Dispatcher):
 class TgBotEngine:
     def __init__(self):
         bot = Bot(get_access_data("telegram"))
-        storage = StateStorage(FSM_STORAGE_PATH)
+        storage = PickleStorage(FSM_STORAGE_PATH)
         
         self.dp = Dispatcher(bot, storage=storage)
 
