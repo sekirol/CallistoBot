@@ -4,6 +4,8 @@ from aiogram.dispatcher import FSMContext
 
 from ..state_machine import AppState
 
+from ...vk_session import vk_session
+
 async def cmd_search(message: types.Message, state: FSMContext):
     await state.set_state(AppState.search)
 
@@ -12,7 +14,7 @@ async def cmd_search(message: types.Message, state: FSMContext):
                          parse_mode="HTML")
 
 async def search_state_handler(message: types.Message, state: FSMContext):
-    await message.answer("Ok")
+    await message.answer(vk_session.get_user_data())
 
 def register_handlers_search(dp: Dispatcher):
     dp.register_message_handler(cmd_search, commands="search", state=AppState.initial)

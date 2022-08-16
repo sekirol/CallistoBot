@@ -18,3 +18,5 @@ class VkSession():
 
     def get_user_data(self):
         return self.api.users.get()
+
+vk_session = VkSession()
